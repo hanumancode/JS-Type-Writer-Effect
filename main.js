@@ -17,5 +17,13 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init() {
     const txtElement = document.querySelector('.txt-type');
-    const words = txtElement.getAttribute('data-words');
+
+    // parse through JSON.parse method
+    const words = JSON.parse(txtElement.getAttribute('data-words'));
+    
+    const wait = txtElement.getAttribute('data-words');
+
+    // initialize the typewriter by passing in all three data attributes
+    new TypeWriter(txtElement, words, wait);
+
 }
