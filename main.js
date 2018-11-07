@@ -10,7 +10,14 @@ const TypeWriter = function(txtElement, words, wait) {
 
 // Type Method
 
-// Init On Dom Load
+TypeWriter.prototype.type = function() {
+
+    console.log('test Type Method');
+
+    setTimeout(() => this.type(), 500)
+}
+
+// Init On Dom Load 
 document.addEventListener('DOMContentLoaded', init);
 
 // Init App
@@ -21,7 +28,7 @@ function init() {
     // parse through JSON.parse method
     const words = JSON.parse(txtElement.getAttribute('data-words'));
     
-    const wait = txtElement.getAttribute('data-words');
+    const wait = txtElement.getAttribute('data-wait');
 
     // initialize the typewriter by passing in all three data attributes
     new TypeWriter(txtElement, words, wait);
