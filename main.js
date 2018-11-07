@@ -12,7 +12,12 @@ const TypeWriter = function(txtElement, words, wait) {
 
 TypeWriter.prototype.type = function() {
 
-    console.log('test Type Method');
+    // console.log('test Type Method');
+
+    // get current word index
+    const currentWordIndex = this.wordIndex % this.words.length;
+
+    console.log(currentWordIndex);
 
     setTimeout(() => this.type(), 500)
 }
