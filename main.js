@@ -20,8 +20,21 @@ TypeWriter.prototype.type = function() {
 
     // get full text of the current word
     const fullText = this.words[currentWordIndex];
-    console.log(fullText);  
+   // console.log(fullText);  
+
+    // check if typed text is in deleting state
     
+    if(this.isDeleting) {
+        // remove a character
+        this.txt = fullText.substring(0, this.txt.length - 1);
+
+    } else {
+        // add a character
+        this.txt = fullText.substring(0, this.txt.length + 1);
+    }
+
+    // output text and insert txt into the text element (span)
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
     setTimeout(() => this.type(), 500)
 }
