@@ -36,6 +36,8 @@ TypeWriter.prototype.type = function() {
     // output text and insert txt into the text element (span)
     this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
+    let typeSpeed = 300;
+
     setTimeout(() => this.type(), 500)
 }
 
