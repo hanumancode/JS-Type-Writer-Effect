@@ -43,6 +43,11 @@ TypeWriter.prototype.type = function() {
         typeSpeed /= 2; // half the typespeed if deleting is true
     }
 
+    // if word is complete
+
+    if(!this.isDeleting && this.txt === fullText) {
+        typeSpeed = this.wait;
+    }
 
     setTimeout(() => this.type(), 500)
 }
